@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function QuotePage() {
   return (
-    <div className="pt-24 md:pt-20">
+    <div className="pt-[60px] md:pt-[64px]">
       <section className="bg-hero-gradient py-16">
         <div className="container-custom text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>

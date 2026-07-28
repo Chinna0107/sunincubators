@@ -19,7 +19,7 @@ export default function ProductDetail() {
   }
 
   return (
-    <div className="pt-24 md:pt-20">
+    <div className="pt-[60px] md:pt-[64px]">
       <section className="section-padding bg-light-gray">
         <div className="container-custom">
           <Link to="/equipment" className="inline-flex items-center gap-2 text-primary text-sm font-semibold mb-8 hover:gap-3 transition-all duration-200">

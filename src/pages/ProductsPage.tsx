@@ -32,7 +32,7 @@ export default function ProductsPage() {
   }, [hash]);
 
   return (
-    <div className="pt-24 md:pt-20">
+    <div className="pt-[60px] md:pt-[64px]">
       {/* Hero */}
       <section className="bg-hero-gradient py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle, #0B6FF5 1px, transparent 1px)', backgroundSize: '40px 40px' }} />

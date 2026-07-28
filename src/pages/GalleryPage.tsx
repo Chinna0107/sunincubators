@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function GalleryPage() {
   return (
-    <div className="pt-24 md:pt-20">
+    <div className="pt-[60px] md:pt-[64px]">
       <section className="bg-hero-gradient py-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle, #0B6FF5 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
         <div className="container-custom relative z-10 text-center">
