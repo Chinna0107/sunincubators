@@ -18,6 +18,8 @@ import hero22 from '../assets/hero22.jpeg';
 import hero23 from '../assets/hero23.jpeg';
 import hero24 from '../assets/hero24.jpeg';
 import hero25 from '../assets/hero25.jpeg';
+import hero26 from '../assets/hero26.jpeg';
+
 
 
 
@@ -136,13 +138,13 @@ export const equipmentData: Equipment[] = [
   { id: 'turning-motor',   title: 'Turning Motor',            category: 'spare_part', shortDesc: 'Reliable egg turning motor for consistent rotation.',                 imgSrc: hero16,    placeholder: 'Turning Motor' },
   { id: 'micro-switch',    title: 'Micro Switch',             category: 'spare_part', shortDesc: 'Precision micro switch for control panel circuits.',                  imgSrc: hero7,     placeholder: 'Micro Switch' },
   { id: 'fan-hub-set',     title: 'Fan Hub Set',              category: 'spare_part', shortDesc: 'Complete fan hub set for easy replacement.',                         imgSrc: '/images/products/fan-hub-set.jpg',      placeholder: 'Fan Hub Set' },
-  { id: 'humidity-set',    title: 'Humidity Set',             category: 'spare_part', shortDesc: 'Replacement humidity management set for all models.',                 imgSrc: hero9,     placeholder: 'Humidity Set' },
+  { id: 'humidity-set',    title: 'Humidity Set',             category: 'spare_part', shortDesc: 'Replacement humidity management set for all models.',                 imgSrc: hero26,     placeholder: 'Humidity Set' },
   { id: 'heater',          title: 'Heating Element / Heater', category: 'spare_part', shortDesc: 'Industrial-grade heating element, energy-efficient and long-lasting.', imgSrc: '/images/products/heater.jpg',           placeholder: 'Heating Element' },
   { id: 'controller-inc',  title: 'Incubator Controller',     category: 'spare_part', shortDesc: 'Advanced digital incubator controller panel for precise control.',    imgSrc: hero14,   placeholder: 'Incubator Controller' },
   { id: 'controller-hum',  title: 'Humidity Controller',      category: 'spare_part', shortDesc: 'Digital humidity controller with alarm and auto-regulation.',         imgSrc: '/images/products/controller-hum.jpg',   placeholder: 'Humidity Controller' },
   { id: 'controller-temp', title: 'Temperature Controller',   category: 'spare_part', shortDesc: 'Precision digital temperature controller with ±0.1°C accuracy.',     imgSrc: '/images/products/controller-temp.jpg',  placeholder: 'Temp Controller' },
-  { id: 'sensor',          title: 'Sensor',                   category: 'spare_part', shortDesc: 'High-precision environmental sensor for accurate readings and control.', imgSrc: hero20, placeholder: 'Sensor' },
-  { id: 'gunny-ring',      title: 'Gunny Ring',               category: 'spare_part', shortDesc: 'Durable gunny ring essential for proper moisture distribution.', imgSrc: hero21, placeholder: 'Gunny Ring' },
-  { id: 'spindle',         title: 'Spindle',                  category: 'spare_part', shortDesc: 'Sturdy replacement spindle for reliable mechanical operation.', imgSrc: hero22, placeholder: 'Spindle' },
-  { id: 'thermometer',     title: 'Dry and Wet Thermometer',  category: 'spare_part', shortDesc: 'Classic dry and wet bulb thermometer for accurate humidity monitoring.', imgSrc: hero23, placeholder: 'Dry & Wet Thermometer' },
+  { id: 'sensor',          title: 'Sensor',                   category: 'hatchers', shortDesc: 'High-precision environmental sensor for accurate readings and control.', imgSrc: hero20, placeholder: 'Sensor' },
+  { id: 'gunny-ring',      title: 'Gunny Ring',               category: 'hatchers', shortDesc: 'Durable gunny ring essential for proper moisture distribution.', imgSrc: hero21, placeholder: 'Gunny Ring' },
+  { id: 'spindle',         title: 'Spindle',                  category: 'hatchers', shortDesc: 'Sturdy replacement spindle for reliable mechanical operation.', imgSrc: hero22, placeholder: 'Spindle' },
+  { id: 'thermometer',     title: 'Dry and Wet Thermometer',  category: 'hatchers', shortDesc: 'Classic dry and wet bulb thermometer for accurate humidity monitoring.', imgSrc: hero23, placeholder: 'Dry & Wet Thermometer' },
 ];

@@ -12,6 +12,13 @@ import hero10 from '../assets/hero9.jpeg';
 import hero14 from '../assets/hero12.jpeg';
 import hero15 from '../assets/hero14.jpeg';
 import hero16 from '../assets/hero15.jpeg';
+import hero26 from '../assets/hero26.jpeg';
+import hero27 from '../assets/hero27.jpeg';
+import hero20 from '../assets/hero20.jpeg';
+import hero21 from '../assets/hero21.jpeg';
+import hero22 from '../assets/hero22.jpeg';
+import hero23 from '../assets/hero23.jpeg';
+import hero24 from '../assets/hero24.jpeg';
 
  
 
@@ -21,7 +28,7 @@ const spareParts = [
   { id: 'tray-quail', name: 'Quail Setting Tray', imgSrc:hero10, desc: 'Specially designed setting tray for quail eggs. Compatible with all Sun Incubator setter models.' },
   { id: 'tray-90', name: 'Egg Setting Tray (90)', imgSrc: hero6, desc: ' (29 * 12 Inch) 90-capacity egg setting tray for medium incubators. Durable plastic construction.' },
   { id: 'hatching-90', name: 'Hatcher Tray (90)', imgSrc: hero15, desc: ' 90-capacity smooth-surface hatching tray. Easy to clean and sanitize for biosecurity.' },
-  { id: 'hatching-180', name: 'Hatcher Tray (180)', imgSrc: '/images/products/hatching-180.jpg', desc: '180-capacity hatching tray for larger hatchers. Smooth base for safe chick emergence.' },
+  { id: 'hatching-180', name: 'Hatcher Tray (180)', imgSrc: hero27, desc: '180-capacity hatching tray for larger hatchers. Smooth base for safe chick emergence.' },
   { id: 'heater', name: 'Heating Element / Heater', imgSrc: '/images/products/heater.jpg', desc: 'Industrial-grade heating element for consistent temperature maintenance. Long lifespan, energy efficient.' },
   { id: 'controller-temp', name: 'Temperature Controller', imgSrc: '/images/products/controller-temp.jpg', desc: 'Digital precision temperature controller with ±0.1°C accuracy. PID-based control for stable incubation.' },
   { id: 'controller-hum', name: 'Humidity Controller', imgSrc: '/images/products/controller-hum.jpg', desc: 'Automatic humidity controller with digital readout and alarm. Ensures optimal humidity throughout incubation.' },
@@ -32,9 +39,13 @@ const spareParts = [
   { id: 'turning-motor', name: 'Turning Motor', imgSrc: hero16, desc: 'Reliable egg turning motor for consistent 45° rotation. Compatible with all setter models.' },
   { id: 'linear-actuator', name: 'Linear Actuator', imgSrc: '/images/products/linear-actuator.jpg', desc: 'Precision linear actuator for automatic egg turning systems. Smooth, silent operation.' },
   { id: 'micro-switch', name: 'Micro Switch', imgSrc: hero7, desc: 'Precision micro switch for door and tray detection in control panel circuits.' },
-  { id: 'humidity-set', name: 'Humidity Set', imgSrc: hero9, desc: 'Complete humidifier set including water tray, evaporator pad, and nozzle for optimal moisture control.' },
+  { id: 'humidity-set', name: 'Humidity Set', imgSrc: hero26, desc: 'Complete humidifier set including water tray, evaporator pad, and nozzle for optimal moisture control.' },
   { id: 'egg-candler', name: 'Egg Candler', imgSrc: '/images/products/egg-candler.jpg', desc: 'High-brightness egg candler for accurate fertility and development checking during incubation.' },
   { id: 'spare-parts-kit', name: 'Genuine Spare Parts Kit', imgSrc: '/images/products/spare-parts.jpg', desc: 'Complete genuine accessories kit — handles, rollers, sensors, door seals, and all essential components.' },
+  { id: 'sensor',          name: 'Sensor',                   desc: 'High-precision environmental sensor for accurate readings and control.', imgSrc: hero20, placeholder: 'Sensor' },
+  { id: 'gunny-ring',      name: 'Gunny Ring',                desc: 'Durable gunny ring essential for proper moisture distribution.', imgSrc: hero21, placeholder: 'Gunny Ring' },
+  { id: 'spindle',         name: 'Spindle',                   desc: 'Sturdy replacement spindle for reliable mechanical operation.', imgSrc: hero22, placeholder: 'Spindle' },
+  { id: 'thermometer',     name: 'Dry and Wet Thermometer', desc: 'Classic dry and wet bulb thermometer for accurate humidity monitoring.', imgSrc: hero23, placeholder: 'Dry & Wet Thermometer' },
 ];
 
 function SparePartCard({ part, index }: { part: typeof spareParts[0]; index: number }) {

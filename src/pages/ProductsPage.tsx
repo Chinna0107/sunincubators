@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Settings, Info, Search } from 'lucide-react';
@@ -73,6 +73,7 @@ const ProductGrid = ({ products }: { products: Equipment[] }) => {
 
 export default function ProductsPage() {
   const { hash } = useLocation();
+  const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -122,6 +123,10 @@ export default function ProductsPage() {
               <button
                 key={cat.id}
                 onClick={() => {
+                  if (cat.id === 'spare_part') {
+                    navigate('/spare-parts');
+                    return;
+                  }
                   setActiveFilter(cat.id);
                   setSearchQuery('');
                 }}
