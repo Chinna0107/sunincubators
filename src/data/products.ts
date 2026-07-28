@@ -71,14 +71,14 @@ export const equipmentData: Equipment[] = [
   //   imgSrc: '/images/products/hatcher-5000.jpg',
   //   placeholder: '5000 Egg Incubator',
   // },
-  // {
-  //   id: 'hatcher-3000',
-  //   title: '3000 Egg Incubator Cum Hatcher',
-  //   category: 'commercial',
-  //   shortDesc: 'Combined incubator and hatcher with 3000 egg capacity for consistent hatching performance.',
-  //   imgSrc: hero12,
-  //   placeholder: '3000 Egg Incubator',
-  // },
+  {
+    id: 'hatcher-3000',
+    title: '3000 Egg Incubator Cum Hatcher',
+    category: 'small_medium',
+    shortDesc: 'Combined incubator and hatcher with 3000 egg capacity for consistent hatching performance.',
+    imgSrc: hero12,
+    placeholder: '3000 Egg Incubator',
+  },
   // {
   //   id: 'custom-incubation',
   //   title: 'Custom Incubation Solutions',
