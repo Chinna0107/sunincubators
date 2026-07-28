@@ -52,8 +52,8 @@ export default function Footer() {
               {[
                 { icon: <FbIcon />, href: '#', label: 'Facebook' },
                 { icon: <IgIcon />, href: 'https://www.instagram.com/sunincubators', label: 'Instagram' },
-                { icon: <YtIcon />, href: '#', label: 'YouTube' },
-                { icon: <LiIcon />, href: '#', label: 'LinkedIn' },
+                { icon: <YtIcon />, href: 'https://youtube.com/@sunincubators4348?si=apt-6GUn65Y7PjLW', label: 'YouTube' },
+                // { icon: <LiIcon />, href: '#', label: 'LinkedIn' },
               ].map(s => (
                 <a
                   key={s.label}

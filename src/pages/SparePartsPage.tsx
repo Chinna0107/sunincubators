@@ -9,22 +9,27 @@ import hero6 from '../assets/hero6.jpeg';
 import hero7 from '../assets/hero7.jpeg';
 import hero9 from '../assets/hero1.jpeg';
 import hero10 from '../assets/hero9.jpeg';
+import hero14 from '../assets/hero12.jpeg';
+import hero15 from '../assets/hero14.jpeg';
+import hero16 from '../assets/hero15.jpeg';
+
+ 
 
 
 const spareParts = [
   { id: 'tray-102', name: 'Egg Setting Tray (102)', imgSrc: hero5, desc: '102-capacity egg setting tray. Precise spacing for optimal airflow around each egg during incubation.' },
   { id: 'tray-quail', name: 'Quail Setting Tray', imgSrc:hero10, desc: 'Specially designed setting tray for quail eggs. Compatible with all Sun Incubator setter models.' },
   { id: 'tray-90', name: 'Egg Setting Tray (90)', imgSrc: hero6, desc: ' (29 * 12 Inch) 90-capacity egg setting tray for medium incubators. Durable plastic construction.' },
-  { id: 'hatching-90', name: 'Hatcher Tray (90)', imgSrc: hero6, desc: ' 90-capacity smooth-surface hatching tray. Easy to clean and sanitize for biosecurity.' },
+  { id: 'hatching-90', name: 'Hatcher Tray (90)', imgSrc: hero15, desc: ' 90-capacity smooth-surface hatching tray. Easy to clean and sanitize for biosecurity.' },
   { id: 'hatching-180', name: 'Hatcher Tray (180)', imgSrc: '/images/products/hatching-180.jpg', desc: '180-capacity hatching tray for larger hatchers. Smooth base for safe chick emergence.' },
   { id: 'heater', name: 'Heating Element / Heater', imgSrc: '/images/products/heater.jpg', desc: 'Industrial-grade heating element for consistent temperature maintenance. Long lifespan, energy efficient.' },
   { id: 'controller-temp', name: 'Temperature Controller', imgSrc: '/images/products/controller-temp.jpg', desc: 'Digital precision temperature controller with ±0.1°C accuracy. PID-based control for stable incubation.' },
   { id: 'controller-hum', name: 'Humidity Controller', imgSrc: '/images/products/controller-hum.jpg', desc: 'Automatic humidity controller with digital readout and alarm. Ensures optimal humidity throughout incubation.' },
-  { id: 'controller-inc', name: 'Incubator Controller', imgSrc: '/images/products/controller-inc.jpg', desc: 'Original Sun Incubators PCB control board. Controls temperature, humidity, and egg turning automatically.' },
+  { id: 'controller-inc', name: 'Incubator Controller', imgSrc: hero14, desc: 'Original Sun Incubators PCB control board. Controls temperature, humidity, and egg turning automatically.' },
   { id: 'fan-motor', name: 'Fan Motor', imgSrc: '/images/products/fan-motor.jpg', desc: 'High-performance replacement fan motor. Low noise, continuous-duty rated for all Sun Incubator models.' },
   { id: 'fan-blades', name: 'Fan Blades', imgSrc: '/images/products/fan-blades.jpg', desc: 'Durable replacement fan blades for balanced airflow and even heat distribution inside incubators.' },
   { id: 'fan-hub-set', name: 'Fan Hub Set', imgSrc: '/images/products/fan-hub-set.jpg', desc: 'Complete fan hub set for easy replacement. Includes hub, shaft, and mounting hardware.' },
-  { id: 'turning-motor', name: 'Turning Motor', imgSrc: '/images/products/turning-motor.jpg', desc: 'Reliable egg turning motor for consistent 45° rotation. Compatible with all setter models.' },
+  { id: 'turning-motor', name: 'Turning Motor', imgSrc: hero16, desc: 'Reliable egg turning motor for consistent 45° rotation. Compatible with all setter models.' },
   { id: 'linear-actuator', name: 'Linear Actuator', imgSrc: '/images/products/linear-actuator.jpg', desc: 'Precision linear actuator for automatic egg turning systems. Smooth, silent operation.' },
   { id: 'micro-switch', name: 'Micro Switch', imgSrc: hero7, desc: 'Precision micro switch for door and tray detection in control panel circuits.' },
   { id: 'humidity-set', name: 'Humidity Set', imgSrc: hero9, desc: 'Complete humidifier set including water tray, evaporator pad, and nozzle for optimal moisture control.' },

@@ -8,24 +8,28 @@ import hero8 from '../../assets/hero8.jpeg';
 
 const homeProducts = [
   {
-    id: 'commercial-egg-incubator',
+    id: 'commercial-egg-incubators',
     title: 'COMMERCIAL EGG INCUBATORS',
     imgSrc: hero2,
+    link: '/products#commercial-egg-incubators'
   },
   {
-    id: 'egg-hatcher',
-    title: 'EGG HATCHERS',
+    id: 'egg-hatchers',
+    title: 'Poultry Equipments',
     imgSrc: '/images/products/egg-hatcher.png',
+    link: '/products#egg-hatchers'
   },
   {
     id: 'small-medium-capacity-incubators',
     title: 'SMALL AND MEDIUM CAPACITY INCUBATORS',
     imgSrc: smallImg,
+    link: '/products#small-medium-capacity-incubators'
   },
   {
     id: 'spare-parts-category',
     title: 'POULTRY INCUBATOR SPARE PARTS',
     imgSrc: hero8,
+    link: '/spare-parts'
   },
 ];
 
@@ -79,7 +83,7 @@ export default function Products() {
               transition={{ delay: i * 0.08, duration: 0.5 }}
             >
               <Link
-                to={`/products#${product.id}`}
+                to={product.link}
                 className="group flex flex-col items-center justify-between bg-white rounded-2xl p-4 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#1473E6]/30 transition-all duration-300 h-full text-center"
               >
                 <div className="w-full aspect-square relative flex items-center justify-center p-2 mb-3 bg-slate-50/50 rounded-xl">

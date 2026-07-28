@@ -12,7 +12,10 @@ const navLinks = [
     path: '/products',
     dropdown: [
       { label: 'All Products', path: '/products' },
-      { label: 'Spare Parts', path: '/spare-parts' },
+      { label: 'Commercial Egg Incubators', path: '/products#commercial-egg-incubators' },
+      { label: 'Poultry Equipments', path: '/products#egg-hatchers' },
+      { label: 'Small & Medium Capacity Incubators', path: '/products#small-medium-capacity-incubators' },
+      { label: 'Poultry Incubator Spare Parts', path: '/spare-parts' },
     ],
   },
   {
