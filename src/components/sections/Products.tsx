@@ -5,6 +5,7 @@ import { ArrowRight, Box } from 'lucide-react';
 import hero2 from '../../assets/hero2.jpeg';
 import smallImg from '../../assets/small.jpeg';
 import hero8 from '../../assets/hero8.jpeg';
+import hero34 from '../../assets/hero34.jpeg'
 
 const homeProducts = [
   {
@@ -16,7 +17,7 @@ const homeProducts = [
   {
     id: 'egg-hatchers',
     title: 'Poultry Equipments',
-    imgSrc: '/images/products/egg-hatcher.png',
+    imgSrc: hero34,
     link: '/products#egg-hatchers'
   },
   {

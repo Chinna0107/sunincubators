@@ -19,6 +19,11 @@ import hero23 from '../assets/hero23.jpeg';
 import hero24 from '../assets/hero24.jpeg';
 import hero25 from '../assets/hero25.jpeg';
 import hero26 from '../assets/hero26.jpeg';
+import hero27 from '../assets/hero31.jpeg';
+import hero32 from '../assets/hero32.jpeg';
+import hero34 from '../assets/hero34.jpeg';
+import hero35 from '../assets/hero35.jpeg';
+
 
 
 
@@ -57,20 +62,20 @@ export const equipmentData: Equipment[] = [
   },
   {
     id: 'incubator-15000',
-    title: '15,000 Egg Incubator',
+    title: '15000 egg incubator and 5000 hatcher',
     category: 'commercial',
     shortDesc: 'Large-scale commercial egg incubator for high-volume hatcheries with uniform airflow system.',
-    imgSrc: '/images/products/incubator-15000.jpg',
+    imgSrc: hero32,
     placeholder: '15,000 Egg Incubator',
   },
-  // {
-  //   id: 'hatcher-5000',
-  //   title: '5000 Egg Incubator Cum Hatcher',
-  //   category: 'commercial',
-  //   shortDesc: 'Combined incubator and hatcher with 5000 egg capacity. Ideal for medium commercial hatcheries.',
-  //   imgSrc: '/images/products/hatcher-5000.jpg',
-  //   placeholder: '5000 Egg Incubator',
-  // },
+  {
+    id: 'hatcher-5000',
+    title: '10,080 egg capacity hatcher',
+    category: 'commercial',
+    shortDesc: 'Combined incubator and hatcher with 10,080 egg capacity. Ideal for medium commercial hatcheries.',
+    imgSrc: hero27,
+    placeholder: '5000 Egg Incubator',
+  },
   {
     id: 'hatcher-3000',
     title: '3000 Egg Incubator Cum Hatcher',
@@ -143,8 +148,9 @@ export const equipmentData: Equipment[] = [
   { id: 'controller-inc',  title: 'Incubator Controller',     category: 'spare_part', shortDesc: 'Advanced digital incubator controller panel for precise control.',    imgSrc: hero14,   placeholder: 'Incubator Controller' },
   { id: 'controller-hum',  title: 'Humidity Controller',      category: 'spare_part', shortDesc: 'Digital humidity controller with alarm and auto-regulation.',         imgSrc: '/images/products/controller-hum.jpg',   placeholder: 'Humidity Controller' },
   { id: 'controller-temp', title: 'Temperature Controller',   category: 'spare_part', shortDesc: 'Precision digital temperature controller with ±0.1°C accuracy.',     imgSrc: '/images/products/controller-temp.jpg',  placeholder: 'Temp Controller' },
-  { id: 'sensor',          title: 'Sensor',                   category: 'hatchers', shortDesc: 'High-precision environmental sensor for accurate readings and control.', imgSrc: hero20, placeholder: 'Sensor' },
-  { id: 'gunny-ring',      title: 'Gunny Ring',               category: 'hatchers', shortDesc: 'Durable gunny ring essential for proper moisture distribution.', imgSrc: hero21, placeholder: 'Gunny Ring' },
-  { id: 'spindle',         title: 'Spindle',                  category: 'hatchers', shortDesc: 'Sturdy replacement spindle for reliable mechanical operation.', imgSrc: hero22, placeholder: 'Spindle' },
-  { id: 'thermometer',     title: 'Dry and Wet Thermometer',  category: 'hatchers', shortDesc: 'Classic dry and wet bulb thermometer for accurate humidity monitoring.', imgSrc: hero23, placeholder: 'Dry & Wet Thermometer' },
+  { id: 'poultry',          title: 'Poultry Equipments',                   category: 'hatchers', shortDesc: 'Poultry Equipments.', imgSrc: hero34, placeholder: 'Sensor' },
+  { id: 'poultry',          title: 'Poultry Equipments',                   category: 'hatchers', shortDesc: 'Poultry Equipments.', imgSrc: hero35, placeholder: 'Sensor' },
+  // { id: 'gunny-ring',      title: 'Gunny Ring',               category: 'hatchers', shortDesc: 'Durable gunny ring essential for proper moisture distribution.', imgSrc: hero21, placeholder: 'Gunny Ring' },
+  // { id: 'spindle',         title: 'Spindle',                  category: 'hatchers', shortDesc: 'Sturdy replacement spindle for reliable mechanical operation.', imgSrc: hero22, placeholder: 'Spindle' },
+  // { id: 'thermometer',     title: 'Dry and Wet Thermometer',  category: 'hatchers', shortDesc: 'Classic dry and wet bulb thermometer for accurate humidity monitoring.', imgSrc: hero23, placeholder: 'Dry & Wet Thermometer' },
 ];

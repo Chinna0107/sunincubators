@@ -19,6 +19,7 @@ import hero21 from '../assets/hero21.jpeg';
 import hero22 from '../assets/hero22.jpeg';
 import hero23 from '../assets/hero23.jpeg';
 import hero24 from '../assets/hero24.jpeg';
+import hero33 from '../assets/hero33.jpeg';
 
  
 
@@ -46,6 +47,7 @@ const spareParts = [
   { id: 'gunny-ring',      name: 'Gunny Ring',                desc: 'Durable gunny ring essential for proper moisture distribution.', imgSrc: hero21, placeholder: 'Gunny Ring' },
   { id: 'spindle',         name: 'Spindle',                   desc: 'Sturdy replacement spindle for reliable mechanical operation.', imgSrc: hero22, placeholder: 'Spindle' },
   { id: 'thermometer',     name: 'Dry and Wet Thermometer', desc: 'Classic dry and wet bulb thermometer for accurate humidity monitoring.', imgSrc: hero23, placeholder: 'Dry & Wet Thermometer' },
+  { id: 'jumbo-thermometer',      name: 'Jumbo Thermometer',                desc: 'High-precision laboratory thermometer for accurate and reliable temperature measurement.', imgSrc: hero33 },
 ];
 
 function SparePartCard({ part, index }: { part: typeof spareParts[0]; index: number }) {

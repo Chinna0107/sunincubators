@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowRight,User } from 'lucide-react';
 import logoImg from '../../assets/logo.jpg';
 
 // Social icon SVGs
@@ -111,28 +111,53 @@ export default function Footer() {
 
           {/* Column 4: Contact Info */}
           <div>
-            <h3 className="text-white font-bold text-sm md:text-base mb-4 uppercase tracking-wider" style={{ fontFamily: 'Outfit, sans-serif' }}>
-              Contact Us
-            </h3>
-            <div className="flex flex-col gap-4 text-xs md:text-sm">
-              <a href="tel:+919440551559" className="group flex items-start gap-2.5 text-slate-400 hover:text-white transition-colors">
-                <Phone size={15} className="text-[#1473E6] shrink-0 mt-0.5" />
-                <span>+91 9440551559</span>
-              </a>
-              <a href="mailto:sunincubators@gmail.com" className="group flex items-start gap-2.5 text-slate-400 hover:text-white transition-colors">
-                <Mail size={15} className="text-[#1473E6] shrink-0 mt-0.5" />
-                <span>sunincubators@gmail.com</span>
-              </a>
-              <div className="flex items-start gap-2.5 text-slate-400">
-                <MapPin size={15} className="text-[#1473E6] shrink-0 mt-0.5" />
-                <span className="leading-relaxed">
-                  SYNO 159, Surya Sai Nagar,<br />
-                  Turkayamjal X Road, Abdullapurmet,<br />
-                  Hyderabad – 501510, Telangana.
-                </span>
-              </div>
-            </div>
-          </div>
+  <h3
+    className="text-white font-bold text-sm md:text-base mb-4 uppercase tracking-wider"
+    style={{ fontFamily: "Outfit, sans-serif" }}
+  >
+    Contact Us
+  </h3>
+
+  
+
+  <div className="flex flex-col gap-4 text-xs md:text-sm">
+    <div className="flex items-start gap-2.5 text-slate-400">
+      <User size={15} className="text-[#1473E6] shrink-0 mt-0.5" />
+      <span>
+        <span className="font-medium text-white">Proprietor:</span>{" "}
+        K. Srinivas Reddy
+      </span>
+    </div>
+    <a
+      href="tel:+919440551559"
+      className="group flex items-start gap-2.5 text-slate-400 hover:text-white transition-colors"
+    >
+      <Phone size={15} className="text-[#1473E6] shrink-0 mt-0.5" />
+      <span>+91 9440551559</span>
+    </a>
+
+    <a
+      href="mailto:sunincubators@gmail.com"
+      className="group flex items-start gap-2.5 text-slate-400 hover:text-white transition-colors"
+    >
+      <Mail size={15} className="text-[#1473E6] shrink-0 mt-0.5" />
+      <span>sunincubators@gmail.com</span>
+    </a>
+
+    
+
+    <div className="flex items-start gap-2.5 text-slate-400">
+      <MapPin size={15} className="text-[#1473E6] shrink-0 mt-0.5" />
+      <span className="leading-relaxed">
+        SYNO 159, Surya Sai Nagar,
+        <br />
+        Turkayamjal X Road, Abdullapurmet,
+        <br />
+        Hyderabad – 501510, Telangana.
+      </span>
+    </div>
+  </div>
+</div>
 
         </div>
       </div>
