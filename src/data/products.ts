@@ -4,6 +4,12 @@ import hero5 from '../assets/hero5.jpeg';
 import hero6 from '../assets/hero6.jpeg';
 import hero7 from '../assets/hero7.jpeg';
 import hero8 from '../assets/hero8.jpeg';
+import hero9 from '../assets/hero1.jpeg';
+import hero10 from '../assets/hero9.jpeg';
+import hero11 from '../assets/hero10.jpeg';
+import hero12 from '../assets/hero11.jpeg';
+import hero13 from '../assets/hero3.jpeg';
+
 
 
 export interface Equipment {
@@ -33,7 +39,7 @@ export const equipmentData: Equipment[] = [
     title: 'Egg Hatchers',
     category: 'incubator',
     shortDesc: 'High-performance hatchers designed for uniform airflow, ideal humidity, and maximum chick survival.',
-    imgSrc: '/images/products/egg-hatcher.jpg',
+    imgSrc: hero13,
     placeholder: 'Egg Hatchers',
   },
   {
@@ -61,14 +67,14 @@ export const equipmentData: Equipment[] = [
     placeholder: 'Custom Incubation Solutions',
   },
   // ── Specific Models ──────────────────────────────────────────────────────────
-  {
-    id: 'sun-1200',
-    title: 'SUN-1200 Automatic Egg Incubator',
-    category: 'incubator',
-    shortDesc: 'Advanced technology automatic egg incubator with 1200 egg capacity. Digital temperature & humidity control.',
-    imgSrc: '/images/products/sun-1200.jpg',
-    placeholder: 'SUN-1200 Incubator',
-  },
+  // {
+  //   id: 'sun-1200',
+  //   title: 'SUN-1200 Automatic Egg Incubator',
+  //   category: 'incubator',
+  //   shortDesc: 'Advanced technology automatic egg incubator with 1200 egg capacity. Digital temperature & humidity control.',
+  //   imgSrc: '/images/products/sun-1200.jpg',
+  //   placeholder: 'SUN-1200 Incubator',
+  // },
   {
     id: 'duck-34000',
     title: '34,000 Duck Egg Incubator',
@@ -98,7 +104,7 @@ export const equipmentData: Equipment[] = [
     title: '3000 Egg Incubator Cum Hatcher',
     category: 'incubator',
     shortDesc: 'Combined incubator and hatcher with 3000 egg capacity for consistent hatching performance.',
-    imgSrc: '/images/products/hatcher-3000.jpg',
+    imgSrc: hero12,
     placeholder: '3000 Egg Incubator',
   },
   {
@@ -106,7 +112,7 @@ export const equipmentData: Equipment[] = [
     title: '1200 Eggs Capacity Incubator Cum Hatcher',
     category: 'incubator',
     shortDesc: 'Combined incubator and hatcher with 1200 egg capacity. Suitable for small to medium farms.',
-    imgSrc: '/images/products/hatcher-1200.jpg',
+    imgSrc: hero11,
     placeholder: '1200 Egg Incubator',
   },
   {
@@ -128,7 +134,7 @@ export const equipmentData: Equipment[] = [
 
   // ── Spare Parts ──────────────────────────────────────────────────────────────
   { id: 'tray-102',        title: '102 Setting Tray',         category: 'spare_part', shortDesc: '102 capacity egg setting tray for standard incubators.',             imgSrc: hero5,         placeholder: '102 Setting Tray' },
-  { id: 'tray-quail',      title: 'Quail Setting Tray',       category: 'spare_part', shortDesc: 'Setting tray specially designed for quail eggs.',                    imgSrc: '/images/products/tray-quail.jpg',       placeholder: 'Quail Tray' },
+  { id: 'tray-quail',      title: 'Quail Setting Tray',       category: 'spare_part', shortDesc: 'Setting tray specially designed for quail eggs.',                    imgSrc: hero10 ,       placeholder: 'Quail Tray' },
   { id: 'tray-90',         title: '90 Setting Tray',          category: 'spare_part', shortDesc: '90 capacity egg setting tray for medium incubators.',                imgSrc: hero6,          placeholder: '90 Setting Tray' },
   { id: 'hatching-90',     title: '90 Hatching Tray',         category: 'spare_part', shortDesc: '90 capacity hatching tray for smooth chick emergence.',              imgSrc: '/images/products/hatching-90.jpg',      placeholder: '90 Hatching Tray' },
   { id: 'hatching-180',    title: '180 Hatching Tray',        category: 'spare_part', shortDesc: '180 capacity hatching tray for larger hatchers.',                    imgSrc: '/images/products/hatching-180.jpg',     placeholder: '180 Hatching Tray' },
@@ -139,7 +145,7 @@ export const equipmentData: Equipment[] = [
   { id: 'turning-motor',   title: 'Turning Motor',            category: 'spare_part', shortDesc: 'Reliable egg turning motor for consistent rotation.',                 imgSrc: '/images/products/turning-motor.jpg',    placeholder: 'Turning Motor' },
   { id: 'micro-switch',    title: 'Micro Switch',             category: 'spare_part', shortDesc: 'Precision micro switch for control panel circuits.',                  imgSrc: hero7,     placeholder: 'Micro Switch' },
   { id: 'fan-hub-set',     title: 'Fan Hub Set',              category: 'spare_part', shortDesc: 'Complete fan hub set for easy replacement.',                         imgSrc: '/images/products/fan-hub-set.jpg',      placeholder: 'Fan Hub Set' },
-  { id: 'humidity-set',    title: 'Humidity Set',             category: 'spare_part', shortDesc: 'Replacement humidity management set for all models.',                 imgSrc: '/images/products/humidity-set.jpg',     placeholder: 'Humidity Set' },
+  { id: 'humidity-set',    title: 'Humidity Set',             category: 'spare_part', shortDesc: 'Replacement humidity management set for all models.',                 imgSrc: hero9,     placeholder: 'Humidity Set' },
   { id: 'heater',          title: 'Heating Element / Heater', category: 'spare_part', shortDesc: 'Industrial-grade heating element, energy-efficient and long-lasting.', imgSrc: '/images/products/heater.jpg',           placeholder: 'Heating Element' },
   { id: 'controller-inc',  title: 'Incubator Controller',     category: 'spare_part', shortDesc: 'Advanced digital incubator controller panel for precise control.',    imgSrc: '/images/products/controller-inc.jpg',   placeholder: 'Incubator Controller' },
   { id: 'controller-hum',  title: 'Humidity Controller',      category: 'spare_part', shortDesc: 'Digital humidity controller with alarm and auto-regulation.',         imgSrc: '/images/products/controller-hum.jpg',   placeholder: 'Humidity Controller' },

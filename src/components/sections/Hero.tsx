@@ -20,7 +20,7 @@ const slides = [
     tagline2: 'DELIVERING PERFORMANCE.',
     highlight: 'SINCE 2004.',
     sub: 'Designing and manufacturing premium commercial egg incubation systems for poultry farms across India.',
-    imgSrc: hero1,
+    imgSrc: hero4,
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const slides = [
     tagline2: 'BUILT TO LAST.',
     highlight: '20+ YEARS.',
     sub: 'Trusted by 1000+ poultry farmers across 28 states. Experience the Sun Incubators difference.',
-    imgSrc: hero2,
+    imgSrc: hero3,
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const slides = [
     tagline2: 'MINIMUM ENERGY.',
     highlight: 'INDIA-WIDE.',
     sub: 'Our machines are engineered for consistent performance, low operating costs, and long-term reliability.',
-    imgSrc: hero3,
+    imgSrc: hero2,
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ const slides = [
     tagline2: 'OPTIMIZED YIELD.',
     highlight: 'FUTURE READY.',
     sub: 'Embracing modern technology to deliver smart incubation solutions for better yield.',
-    imgSrc: hero4,
+    imgSrc: hero1,
   },
 ];
 
