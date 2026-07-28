@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', 'Outfit', system-ui, sans-serif;
+  background-color: #ffffff;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #06111F; }
+::-webkit-scrollbar-thumb { background: #0B6FF5; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #2EA4FF; }
+
+/* ─── Custom Cursor ─────────────────────────────────────────── */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #0B6FF5;
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(11, 111, 245, 0.6);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease;
+}
+
+.cursor-ring.hovered {
+  width: 56px;
+  height: 56px;
+  border-color: #0B6FF5;
+  background: rgba(11, 111, 245, 0.1);
+}
+
+/* ─── Glassmorphism ─────────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-blue {
+  background: rgba(11, 111, 245, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(11, 111, 245, 0.25);
+}
+
+.glass-dark {
+  background: rgba(6, 17, 31, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Image Placeholder ─────────────────────────────────────── */
+.img-placeholder {
+  background: linear-gradient(135deg, #0D1F35 0%, #0A1929 100%);
+  border: 2px dashed rgba(11, 111, 245, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: rgba(46, 164, 255, 0.7);
+  font-size: 0.75rem;
+  font-weight: 500;
+  gap: 0.5rem;
+}
+
+.img-placeholder-light {
+  background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+  border: 2px dashed rgba(11, 111, 245, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 500;
+  gap: 0.5rem;
+}
+
+/* ─── Swiper overrides ──────────────────────────────────────── */
+.hero-swiper {
+  padding-bottom: 48px !important;
+}
+.hero-swiper .swiper-pagination {
+  bottom: 14px !important;
+}
+.swiper-pagination-bullet {
+  background: rgba(255,255,255,0.35) !important;
+  opacity: 1 !important;
+  width: 8px !important;
+  height: 8px !important;
+  transition: all 0.3s ease !important;
+}
+.swiper-pagination-bullet-active {
+  background: #1473E6 !important;
+  width: 26px !important;
+  border-radius: 4px !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  background: rgba(11,111,245,0.5) !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  backdrop-filter: blur(8px) !important;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px !important;
+  font-weight: 900 !important;
+}
+
+/* ─── Scroll progress ───────────────────────────────────────── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0B6FF5, #2EA4FF);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ─── Utilities ─────────────────────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, #0B6FF5, #2EA4FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.border-gradient {
+  border: 1px solid;
+  border-image: linear-gradient(135deg, #0B6FF5, #2EA4FF) 1;
+}
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(11, 111, 245, 0.15);
+}
+.section-padding {
+  padding: 5rem 0;
+}
+@media (max-width: 768px) {
+  .section-padding { padding: 3.5rem 0; }
+}
+.container-custom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+@media (max-width: 640px) {
+  .container-custom { padding: 0 1rem; }
+}
+
+
+
+/* ─── Loader particles ──────────────────────────────────────── */
+.loader-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(11, 111, 245, 0.6);
+  animation: particle-float linear infinite;
+}
+
+/* ─── Masonry grid ──────────────────────────────────────────── */
+.masonry-grid {
+  columns: 3;
+  column-gap: 1rem;
+}
+.masonry-grid-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+@media (max-width: 1024px) {
+  .masonry-grid { columns: 2; }
+}
+@media (max-width: 640px) {
+  .masonry-grid { columns: 1; }
+}
+
+/* ─── Mobile nav bottom bar ─────────────────────────────────── */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #06111F;
+  border-top: 1px solid rgba(11,111,245,0.3);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0 calc(0.5rem + env(safe-area-inset-bottom));
+}
+
+/* ─── Utilities ─────────────────────────────────────────────── */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
