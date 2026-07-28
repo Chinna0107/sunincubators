@@ -106,14 +106,14 @@ export const equipmentData: Equipment[] = [
     imgSrc: '/images/products/hatcher-600.jpg',
     placeholder: '600 Egg Incubator',
   },
-  // {
-  //   id: 'hatcher-400',
-  //   title: '400 Egg Capacity Incubator Cum Hatcher',
-  //   category: 'small_medium',
-  //   shortDesc: 'Efficient incubator and hatcher for medium scale production.',
-  //   imgSrc: hero25,
-  //   placeholder: '400 Egg Incubator',
-  // },
+  {
+    id: 'hatcher-400',
+    title: '400 Egg Capacity Incubator Cum Hatcher',
+    category: 'small_medium',
+    shortDesc: 'Efficient incubator and hatcher for medium scale production.',
+    imgSrc: hero25,
+    placeholder: '400 Egg Incubator',
+  },
   {
     id: 'hatcher-180',
     title: '180 Egg Incubator Cum Hatcher',
