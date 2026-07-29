@@ -1,17 +1,32 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Settings, Info, Search } from 'lucide-react';
+import { Settings, Info, Search, Phone, ArrowRight } from 'lucide-react';
 import GetQuote from '../components/sections/GetQuote';
 import StatsBar from '../components/sections/StatsBar';
 
 const BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const PHONE = '919440551559';
 
 function resolveUrl(url: string) {
   if (!url) return '';
   if (url.startsWith('http') || url.startsWith('blob')) return url;
   if (url.startsWith('/images/')) return url;
   return `${BASE}${url}`;
+}
+
+function whatsappUrl(productName: string) {
+  const msg = `Hello Sun Incubators,
+I would like a quotation for:
+
+Product: "${productName}"
+
+Please share:
+• Price
+• Delivery time
+• Shipping charges
+• Product brochure`;
+  return `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
 }
 
 interface Product {
@@ -71,12 +86,24 @@ const ProductGrid = ({ products }: { products: Product[] }) => (
                 {p.category === 'spare_part' ? 'Genuine Part' : '1 Year Warranty'}
               </span>
             </div>
-            <Link
-              to={p.category === 'spare_part' ? '/spare-parts' : '/quote'}
-              className="inline-flex items-center gap-2 bg-[#1473E6] hover:bg-blue-600 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5"
-            >
-              {p.category === 'spare_part' ? 'View Details' : 'Get a Quote'} <ArrowRight size={13} />
-            </Link>
+            <div className="flex gap-2">
+              <a
+                href={whatsappUrl(p.title)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5"
+              >
+                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.186-1.443A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.724.868.936-3.42-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
+                WhatsApp Quote
+              </a>
+              <a
+                href={`tel:+${PHONE}`}
+                className="inline-flex items-center justify-center gap-1.5 border border-slate-200 hover:border-primary/40 hover:bg-primary/5 text-slate-600 hover:text-primary text-xs font-bold px-3 py-2.5 rounded-lg transition-all duration-300"
+              >
+                <Phone size={13} />
+                Call
+              </a>
+            </div>
           </div>
         </motion.div>
       ))}
