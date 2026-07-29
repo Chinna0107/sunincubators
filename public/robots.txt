@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Block admin routes
+Disallow: /admin
+Disallow: /admin/
+
+# Block API and dev paths
+Disallow: /api/
+Disallow: /*.json$
+
+Sitemap: https://sunincubators.com/sitemap.xml
