@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Send, MessageCircle, Phone } from 'lucide-react';
+
+const PHONE = '919440551559';
 
 const states = [
   'Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chhattisgarh','Goa','Gujarat','Haryana',
@@ -21,7 +22,6 @@ const productOptions = [
 
 export default function GetQuote() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
-  const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     name: '', company: '', phone: '', email: '',
     state: '', product: '', capacity: '', message: '',
@@ -33,8 +33,27 @@ export default function GetQuote() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    const lines = [
+      `Hello Sun Incubators,`,
+      `I would like a quotation for:`,
+      ``,
+      `Name: ${form.name}`,
+      form.company ? `Company: ${form.company}` : '',
+      `Phone: ${form.phone}`,
+      form.email ? `Email: ${form.email}` : '',
+      `State: ${form.state}`,
+      `Product: ${form.product}`,
+      form.capacity ? `Required Capacity: ${form.capacity}` : '',
+      form.message ? `\nMessage: ${form.message}` : '',
+      ``,
+      `Please share:`,
+      `• Price`,
+      `• Delivery time`,
+      `• Shipping charges`,
+      `• Product brochure`,
+    ].filter(l => l !== undefined && l !== null);
+    const msg = lines.join('\n');
+    window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
   const inputClass = "w-full bg-white/10 border border-white/20 text-white placeholder-white/40 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-white/50 focus:ring-1 focus:ring-white/50 focus:bg-white/15 transition-all duration-200";
@@ -69,17 +88,6 @@ export default function GetQuote() {
           className="max-w-3xl mx-auto"
         >
           <div className="glass-blue rounded-3xl p-6 md:p-10 shadow-premium">
-            {submitted ? (
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                className="text-center py-12"
-              >
-                <div className="text-5xl mb-4">✅</div>
-                <h3 className="text-white font-black text-2xl mb-2">Quote Request Sent!</h3>
-                <p className="text-white/70 text-sm">Our team will contact you within 24 hours.</p>
-              </motion.div>
-            ) : (
               <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className={labelClass}>Your Name *</label>
@@ -120,31 +128,17 @@ export default function GetQuote() {
                   <textarea name="message" value={form.message} onChange={handleChange} rows={4} placeholder="Describe your requirements..." className={`${inputClass} resize-none`} />
                 </div>
 
-                {/* Submit buttons */}
-                <div className="sm:col-span-2 flex flex-col sm:flex-row gap-3">
+                {/* Submit button */}
+                <div className="sm:col-span-2">
                   <button
                     type="submit"
-                    className="flex-1 flex items-center justify-center gap-2 bg-white text-[#1473E6] font-black py-3.5 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-sm tracking-wide"
+                    className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-black py-4 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-sm tracking-wide"
                   >
-                    <Send size={16} /> REQUEST QUOTE
+                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.855L.057 23.882l6.186-1.443A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.724.868.936-3.42-.235-.372A9.818 9.818 0 1112 21.818z"/></svg>
+                    SEND ENQUIRY ON WHATSAPP
                   </button>
-                  <a
-                    href="https://wa.me/919440551559?text=Hi, I'd like to get a quote for Sun Incubators products."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white font-black py-3.5 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-sm tracking-wide"
-                  >
-                    <MessageCircle size={16} /> WHATSAPP
-                  </a>
-                  <a
-                    href="tel:+919440551559"
-                    className="flex items-center justify-center gap-2 bg-white/10 border border-white/30 text-white font-bold py-3.5 px-6 rounded-lg hover:bg-white/20 transition-all duration-300 text-sm"
-                  >
-                    <Phone size={16} /> CALL NOW
-                  </a>
                 </div>
               </form>
-            )}
           </div>
         </motion.div>
       </div>
