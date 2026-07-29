@@ -18,6 +18,10 @@ import GalleryPage from './pages/GalleryPage';
 import ContactPage from './pages/ContactPage';
 import QuotePage from './pages/QuotePage';
 import WhyChooseUsPage from './pages/WhyChooseUsPage';
+import AdminLogin from './admin/AdminLogin';
+import AdminLayout from './admin/AdminLayout';
+import AdminProducts from './admin/AdminProducts';
+import AdminGallery from './admin/AdminGallery';
 
 // Page transition wrapper
 function PageTransition({ children }: { children: React.ReactNode }) {
@@ -46,6 +50,19 @@ function ScrollToTop() {
 
 function AppContent() {
   const location = useLocation();
+  const isAdmin = location.pathname.startsWith('/admin');
+
+  if (isAdmin) {
+    return (
+      <Routes location={location}>
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route path="products" element={<AdminProducts />} />
+          <Route path="gallery" element={<AdminGallery />} />
+        </Route>
+      </Routes>
+    );
+  }
 
   return (
     <>

@@ -26,6 +26,7 @@ const navLinks = [
       { label: 'Get a Quote', path: '/quote' },
     ],
   },
+  { label: 'Gallery', path: '/gallery' },
   { label: 'Why Choose Us', path: '/why-choose-us' },
   { label: 'Contact Us', path: '/contact' },
 ];

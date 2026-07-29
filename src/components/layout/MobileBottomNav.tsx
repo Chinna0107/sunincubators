@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom';
-import { Home, Package, Wrench, Shield, Phone } from 'lucide-react';
+import { Home, Package, Wrench, Images, Phone } from 'lucide-react';
 
 const navItems = [
   { label: 'HOME', path: '/', icon: Home },
   { label: 'PRODUCTS', path: '/products', icon: Package },
   { label: 'SERVICES', path: '/services', icon: Wrench },
-  { label: 'WHY CHOOSE US', path: '/why-choose-us', icon: Shield },
+  { label: 'GALLERY', path: '/gallery', icon: Images },
   { label: 'CONTACT', path: '/contact', icon: Phone },
 ];
 

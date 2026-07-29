@@ -1,13 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { X, ZoomIn } from 'lucide-react';
-import { galleryItems, galleryCategories } from '../../data/gallery';
+
+const BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const galleryCategories = ['all', 'products', 'factory', 'installation', 'team'];
+
+interface GalleryItem { id: number; label: string; category: string; img_url: string; }
+
+function resolveUrl(url: string) {
+  if (!url) return '';
+  if (url.startsWith('http') || url.startsWith('blob')) return url;
+  if (url.startsWith('/images/')) return url; // served from frontend public/
+  return `${BASE}${url}`;
+}
 
 export default function Gallery() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   const [activeCategory, setActiveCategory] = useState('all');
-  const [lightbox, setLightbox] = useState<null | typeof galleryItems[0]>(null);
+  const [lightbox, setLightbox] = useState<GalleryItem | null>(null);
+  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([]);
+
+  useEffect(() => {
+    fetch(`${BASE}/api/gallery`)
+      .then(r => r.json())
+      .then(setGalleryItems)
+      .catch(() => {});
+  }, []);
 
   const filtered = activeCategory === 'all'
     ? galleryItems
@@ -67,7 +86,7 @@ export default function Gallery() {
               >
                 <div className={`w-full overflow-hidden ${i % 3 === 0 ? 'aspect-[3/4]' : i % 2 === 0 ? 'aspect-square' : 'aspect-[4/3]'}`}>
                   <img
-                    src={item.imgSrc}
+                    src={resolveUrl(item.img_url)}
                     alt={item.label}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -114,7 +133,7 @@ export default function Gallery() {
                   <X size={28} />
                 </button>
                 <img
-                  src={lightbox.imgSrc}
+                  src={resolveUrl(lightbox.img_url)}
                   alt={lightbox.label}
                   className="w-full aspect-[4/3] object-contain rounded-2xl max-h-[80vh]"
                 />

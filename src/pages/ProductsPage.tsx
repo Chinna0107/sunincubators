@@ -2,9 +2,27 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Settings, Info, Search } from 'lucide-react';
-import { equipmentData, Equipment } from '../data/products';
 import GetQuote from '../components/sections/GetQuote';
 import StatsBar from '../components/sections/StatsBar';
+
+const BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
+function resolveUrl(url: string) {
+  if (!url) return '';
+  if (url.startsWith('http') || url.startsWith('blob')) return url;
+  if (url.startsWith('/images/')) return url;
+  return `${BASE}${url}`;
+}
+
+interface Product {
+  id: number;
+  slug: string;
+  title: string;
+  category: string;
+  short_desc: string;
+  img_url: string;
+  placeholder: string;
+}
 
 const categories = [
   { id: 'all', label: 'All' },
@@ -14,68 +32,71 @@ const categories = [
   { id: 'spare_part', label: 'POULTRY INCUBATOR SPARE PARTS' }
 ];
 
-const ProductGrid = ({ products }: { products: Equipment[] }) => {
-  return (
-    <motion.div
-      layout
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8"
-    >
-      <AnimatePresence mode="popLayout">
-        {products.map((p, i) => (
-          <motion.div
-            key={p.id}
-            layout
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.3, delay: i * 0.05 }}
-            className="group block bg-white rounded-2xl border border-slate-100 transition-all duration-300 overflow-hidden hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_8px_40px_rgba(11,111,245,0.12)]"
-          >
-            <div className="overflow-hidden aspect-[4/3] bg-slate-50 flex items-center justify-center p-6">
-              <img
-                src={p.imgSrc}
-                alt={p.title}
-                loading="lazy"
-                className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                onError={(e) => {
-                  const el = e.target as HTMLImageElement;
-                  el.parentElement!.innerHTML = `<div class="w-full h-full flex items-center justify-center bg-slate-100 text-slate-400 text-xs text-center p-4">${p.placeholder}</div>`;
-                }}
-              />
+const ProductGrid = ({ products }: { products: Product[] }) => (
+  <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+    <AnimatePresence mode="popLayout">
+      {products.map((p, i) => (
+        <motion.div
+          key={p.id}
+          layout
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.9 }}
+          transition={{ duration: 0.3, delay: i * 0.05 }}
+          className="group block bg-white rounded-2xl border border-slate-100 transition-all duration-300 overflow-hidden hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_8px_40px_rgba(11,111,245,0.12)]"
+        >
+          <div className="overflow-hidden aspect-[4/3] bg-slate-50 flex items-center justify-center p-6">
+            <img
+              src={resolveUrl(p.img_url)}
+              alt={p.title}
+              loading="lazy"
+              className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+              onError={(e) => {
+                const el = e.target as HTMLImageElement;
+                el.parentElement!.innerHTML = `<div class="w-full h-full flex items-center justify-center bg-slate-100 text-slate-400 text-xs text-center p-4">${p.placeholder}</div>`;
+              }}
+            />
+          </div>
+          <div className="p-6">
+            <div className="flex items-center gap-2 mb-2">
+              <Settings size={16} className="text-primary" />
+              <h2 className="text-navy font-black text-base" style={{ fontFamily: 'Outfit, sans-serif' }}>{p.title}</h2>
             </div>
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-2">
-                <Settings size={16} className="text-primary" />
-                <h2 className="text-navy font-black text-base" style={{ fontFamily: 'Outfit, sans-serif' }}>{p.title}</h2>
-              </div>
-              <p className="text-slate-400 text-sm mb-4 leading-relaxed line-clamp-3">{p.shortDesc}</p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-lg uppercase">
-                  {p.category === 'spare_part' ? 'Spare Part' : 'Equipment'}
-                </span>
-                <span className="bg-green-50 text-green-700 text-[10px] font-bold px-2 py-1 rounded-lg uppercase">
-                  {p.category === 'spare_part' ? 'Genuine Part' : '1 Year Warranty'}
-                </span>
-              </div>
-              <Link
-                to={p.category === 'spare_part' ? "/spare-parts" : "/quote"}
-                className="inline-flex items-center gap-2 bg-[#1473E6] hover:bg-blue-600 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5"
-              >
-                {p.category === 'spare_part' ? 'View Details' : 'Get a Quote'} <ArrowRight size={13} />
-              </Link>
+            <p className="text-slate-400 text-sm mb-4 leading-relaxed line-clamp-3">{p.short_desc}</p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-lg uppercase">
+                {p.category === 'spare_part' ? 'Spare Part' : 'Equipment'}
+              </span>
+              <span className="bg-green-50 text-green-700 text-[10px] font-bold px-2 py-1 rounded-lg uppercase">
+                {p.category === 'spare_part' ? 'Genuine Part' : '1 Year Warranty'}
+              </span>
             </div>
-          </motion.div>
-        ))}
-      </AnimatePresence>
-    </motion.div>
-  );
-};
+            <Link
+              to={p.category === 'spare_part' ? '/spare-parts' : '/quote'}
+              className="inline-flex items-center gap-2 bg-[#1473E6] hover:bg-blue-600 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5"
+            >
+              {p.category === 'spare_part' ? 'View Details' : 'Get a Quote'} <ArrowRight size={13} />
+            </Link>
+          </div>
+        </motion.div>
+      ))}
+    </AnimatePresence>
+  </motion.div>
+);
 
 export default function ProductsPage() {
   const { hash } = useLocation();
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [allProducts, setAllProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    fetch(`${BASE}/api/products`)
+      .then(r => r.json())
+      .then(setAllProducts)
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     if (!hash) return;
@@ -83,15 +104,13 @@ export default function ProductsPage() {
     if (id === 'commercial-egg-incubators') setActiveFilter('commercial');
     else if (id === 'egg-hatchers') setActiveFilter('hatchers');
     else if (id === 'small-medium-capacity-incubators') setActiveFilter('small_medium');
-
-    // Scroll to top to prevent native jump behavior
     window.scrollTo(0, 0);
   }, [hash]);
 
-  const filteredProducts = equipmentData.filter(e => {
-    const matchesCategory = activeFilter === 'all' || e.category === activeFilter;
-    const matchesSearch = e.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      e.shortDesc.toLowerCase().includes(searchQuery.toLowerCase());
+  const filteredProducts = allProducts.filter(p => {
+    const matchesCategory = activeFilter === 'all' || p.category === activeFilter;
+    const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.short_desc.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
